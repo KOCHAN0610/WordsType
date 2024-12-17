@@ -1,6 +1,4 @@
-WordsList=["yamaga","Apple","Microsoft","parceiro"];
-result="error or finish";
-
+///関数定義
 function showQuestion() {
     console.log("run makeNum");
     numOfWL=WordsList.length;
@@ -14,11 +12,11 @@ function showQuestion() {
     return question
 }
 
-function calculate(answer_tmp,question_tmp) {
+function calculate(answer_tmp_01,question_tmp) {
     console.log("caluculate Run");
     console.log("question : "+question_tmp);
-    console.log("answer : " + answer_tmp);
-    if (answer_tmp==question_tmp) {
+    console.log("answer : " + answer_tmp_01);
+    if (answer_tmp_01==question_tmp) {
         result = "Correct！正解！";
         end = true;
     }else{
@@ -29,10 +27,14 @@ function calculate(answer_tmp,question_tmp) {
     console.log("end : "+end);
     document.getElementById("result").innerHTML = result;
 }
-
-end=false;
-question_01=showQuestion();
-while (end==false) {
-    document.getElementById('answer').addEventListener("keydown", calculate(this,question_01), false);
+function inputChange(event) {
+    const answer_tmp_02 = event.target.value;
+    calculate(answer_tmp_02,question_01)
 }
-
+///変数の定義
+WordsList=["yamaga","Apple","Microsoft","parceiro"];
+result="error or finish";
+end=false;
+///実際の動き
+question_01=showQuestion();
+document.getElementById("answer").oninput = calculate(this,question_01)

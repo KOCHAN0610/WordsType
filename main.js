@@ -38,3 +38,4 @@ end=false;
 ///実際の動き
 question_01=showQuestion();
 document.getElementById("answer").oninput = calculate(this,question_01)
+///from iPad

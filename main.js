@@ -26,6 +26,12 @@ function calculate(answer_tmp_01,question_tmp) {
     console.log("result : " + result);
     console.log("end : "+end);
     document.getElementById("result").innerHTML = result;
+    if (end) {
+        setTimeout(() => {
+            document.getElementById("answer").value = ""; // 入力フィールドをリセット
+            question_01 = showQuestion(); // 次のクイズを出題
+        }, 1000); // 1秒待って次のクイズを出題
+    }
 }
 function inputChange(event) {
     const answer_tmp_02 = event.target.value;
@@ -36,6 +42,6 @@ WordsList=["yamaga","Apple","Microsoft","parceiro"];
 result="error or finish";
 end=false;
 ///実際の動き
-question_01=showQuestion();
-document.getElementById("answer").oninput = calculate(this,question_01)
-///from iPad
+let question_01=showQuestion();
+document.getElementById("answer").addEventListener("input", inputChange);
+

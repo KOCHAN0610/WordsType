@@ -66,8 +66,8 @@ function inputChange(event) {
     calculate(answer_tmp_02,question_01)
 }
 ///変数の定義
-WordsList_Japanese=["山雅","アップル（頭文字大文字）","マイクロソフト（頭文字大文字）","パルセイロ","ポテト","バスケットボール","情報"];
-WordsList_English=["yamaga","Apple","Microsoft","parceiro","potato","basketball","infomation"];
+WordsList_Japanese=["山雅","アップル","マイクロソフト（頭文字大文字）","パルセイロ","ポテト","バスケットボール","情報"];
+WordsList_English=["Yamaga","Apple","Microsoft","Parceiro","Potato","Basketball","infomation"];
 result="error or finish";
 end=false;
 
